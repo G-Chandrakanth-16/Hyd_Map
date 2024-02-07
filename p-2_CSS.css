@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding:0;
+}
+#t1{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(25, 158, 230, 0.705)),url(uwbg2.jpg);
+    background-size:cover;
+    background-position: center;
+    height:100vh;
+}
+.icon{
+    width:100px;
+   position:absolute;
+    top:10%;
+    right:5%;
+    margin:0;
+
+}
+.text{
+    text-align: center;
+    padding-top: 20%;
+    padding-left:70%;
+    color: whitesmoke;
+    text-shadow: 3px 3px 3px black;
+}
+.text h1{
+    font-size: 40px;
+    font-family: cursive;
+}
+.text p{
+    font-size: 18px;
+    font-style: italic;
+}
+.banner-but{
+    margin: 100px auto 0;
+}
+.banner-but a{
+    width: 100px;
+    display:inline-block;
+    margin:0 10px;
+    padding:20px 2px;
+    color:white;
+    border:.5px solid;
+    position:relative;
+    z-index: 1;
+    transition:color 0.5s;
+}
+.banner-but a span{
+    width:0;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:white;
+   z-index:-1;
+   transition:0.5s;
+}
+.banner-but a:hover span{
+width:100%;
+}
+.banner-but a:hover{
+    color:black;
+    }
+    #na{
+        width:120px;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        background:rgb(30, 52, 66);
+    }
+    nav ul li{
+        list-style:none;
+        margin:50px 20px;
+
+    }
+    nav ul li a{
+        text-decoration: dotted;
+        color:white;
+        
+        
+    }
