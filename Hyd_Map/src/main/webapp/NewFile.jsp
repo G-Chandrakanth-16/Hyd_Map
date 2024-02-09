@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="NewFile.css">
+    <link rel="stylesheet" href="./NewFile.css">
 </head>
 <body>
 <h1>Find Your Route</h1>
@@ -40,8 +40,8 @@
         <div class="btn btn-secondary rounded-pill px-3">BirlaScience<br>Museum</div>
         <div class="btn btn-secondary rounded-pill px-3">Shilparamam</div>
        </div>
-       <div class="form">
-        <form action="Map" method="post">
+       <div class="chandu">
+        <form action="Path" method="post">
             
             <h1 class="head h3 mb-3 fw-normal">Enter source and destination</h1>
         
@@ -63,7 +63,7 @@
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
               <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Chandrakanth, CVR</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">@ 2024 Chandrakanth, CVR</span>
           </div>
       
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

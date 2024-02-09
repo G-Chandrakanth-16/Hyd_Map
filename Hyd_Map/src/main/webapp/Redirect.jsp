@@ -40,8 +40,8 @@
         <div class="btn btn-secondary rounded-pill px-3">BirlaScience<br>Museum</div>
         <div class="btn btn-secondary rounded-pill px-3">Shilparamam</div>
        </div>
-       <div class="form">
-        <form action="Map" method="post">
+       <div class="chandu">
+        <form action="Path" method="post">
             
             <h1 class="head h3 mb-3 fw-normal">Enter source and destination</h1>
         
@@ -57,9 +57,13 @@
           </form>
        </div>
     </div>
-    <div>
-    <p>Message: <%= session.getAttribute("path") %></p>
-    <p>Value: <%= session.getAttribute("distance") %></p>
+    <div class="path">
+    <%
+        Integer value1 = (Integer)request.getAttribute("key1");
+        String value2 = (String)request.getAttribute("key2");        
+    %>
+    <h2>Distance: <%= request.getAttribute("key1") %> kms</h2>
+    <h2>Path: <%= request.getAttribute("key2") %></h2>
     </div>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -67,7 +71,7 @@
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
               <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Chandrakanth, CVR</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">@ 2024 Chandrakanth, CVR</span>
           </div>
       
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

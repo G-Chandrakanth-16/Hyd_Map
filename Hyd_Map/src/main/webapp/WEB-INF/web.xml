@@ -19,4 +19,15 @@
     <servlet-name>Map</servlet-name>
     <url-pattern>/Map</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Path</display-name>
+    <servlet-name>Path</servlet-name>
+    <servlet-class>Backendt.Path</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Path</servlet-name>
+    <url-pattern>/Path</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

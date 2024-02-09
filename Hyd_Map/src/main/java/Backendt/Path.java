@@ -1,34 +1,31 @@
-package main_Code;
+package Backendt;
 
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import Backendt.Hyd_Map;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
-
 /**
- * Servlet implementation class Map
+ * Servlet implementation class Path
  */
-public class Map extends HttpServlet {
+public class Path extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	String src,dest;
-	ServletContext s;
-
+       String src;
+       String dest;
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Map(ServletConfig config) {
+    public Path() {
+        super();
         // TODO Auto-generated constructor stub
-    	s = config.getServletContext();
     }
 
 	/**
@@ -44,6 +41,7 @@ public class Map extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request, response);
 		response.setContentType("text/html");
 		doGet(request, response);
 		PrintWriter out=response.getWriter();
@@ -52,32 +50,25 @@ public class Map extends HttpServlet {
 		out.println(src+" "+dest);
 		Hyd_Map g=new Hyd_Map();
 		g.createMap(g);
-        String path="";
-        if(!g.vrtces.contains(dest) || !g.vrtces.contains(src))
+		String path="";
+		if(!g.vrtces.contains(dest) || !g.vrtces.contains(src))
         {
-        	
+        	request.setAttribute("key1", 0);
+            request.setAttribute("key2", "Kindly input the accurate spellings!!");
          out.println("You entered the places wrong please kindly enter the correct spelling!!");
         }
-        else if(src.equals(dest)){
-        	
-        }
+//		else if(src.equals(dest)) {
+//			request.setAttribute("key1", 0);
+//            request.setAttribute("key2", src);
+//		}
         else{
          int p=g.shortestPath(src,dest,path);
+         request.setAttribute("key1", p);
+         request.setAttribute("key2",g.paths.get(dest));
          out.println("Shortest path between "+src+" and "+dest+" is: "+p+"kms.");
          out.println("Shortest path is :"+g.paths.get(dest));
-         
-         //Cookie c = new Cookie("key1", String.valueOf(p));
-         //Cookie c2 = new Cookie("key2",g.paths.get(dest));
-         
-         //response.addCookie(c);
-         //response.addCookie(c2);
-         
-//         request.setAttribute("key1", p);
-//         request.setAttribute("key2", g.paths.get(dest));
-         
         }
-//        response.sendRedirect("Redirect.jsp");
-       out.println("chandu");
+		request.getRequestDispatcher("Redirect.jsp").forward(request, response);
 	}
 
 }
@@ -191,7 +182,7 @@ class Hyd_Map {
     public static void createMap(Hyd_Map g){
         
         g.addVertex("Charminar");
-        g.addVertex("BirlaTempleint");
+        g.addVertex("BirlaTemple");
         g.addVertex("HussainSagar");
         g.addVertex("NehruZoologicalPark");
         g.addVertex("QutbShahiTombs");
@@ -269,3 +260,4 @@ class Hyd_Map {
        // System.out.println("chndu");
     }
 }
+
